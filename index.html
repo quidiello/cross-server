@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cross-Server</title>
+</head>
+<body>
+  <script>
+
+    window.addEventListener("message", getBanner, false);
+
+    function getBanner(datos) {
+      console.log(datos);
+      if(datos["origin"] == "http://xavierquidiello.com") {
+        var time = datos.data.getHours();
+        var banner = selectBanner(time);
+        parent.postMessage(banner, "http://xavierquidiello.com");
+      }
+    }
+
+    function selectBanner(time) {
+      var domain = "http://156.35.95.73/cross-server";
+
+      if(time > 6 && time <= 7) {
+        return domain + '/img/amanecer.jpg';
+      }
+      else if(time > 7 && time <= 11) {
+        return domain + '/img/mañana.jpg';
+      }
+      else if(time > 11 && time <= 13) {
+        return domain + '/img/mediodia.jpg';
+      }
+      else if(time > 13 && time <= 19) {
+        return domain + '/img/tarde.jpg';
+      }
+      else if(time > 19 && time <= 21) {
+        return domain + '/img/atardecer.jpg';
+      }
+      else {
+        return domain + '/img/noche.jpg';
+      }
+    }
+
+  </script>
+</body>
+</html>
