@@ -21,19 +21,19 @@
     function selectBanner(time) {
       var domain = "http://156.35.95.73/cross-server";
 
-      if(time > 6 && time <= 7) {
+      if(time >= 6 && time < 7) {
         return domain + '/img/amanecer.jpg';
       }
-      else if(time > 7 && time <= 11) {
+      else if(time >= 7 && time < 11) {
         return domain + '/img/mañana.jpg';
       }
-      else if(time > 11 && time <= 13) {
+      else if(time >= 11 && time < 13) {
         return domain + '/img/mediodia.jpg';
       }
-      else if(time > 13 && time <= 19) {
+      else if(time >= 13 && time < 19) {
         return domain + '/img/tarde.jpg';
       }
-      else if(time > 19 && time <= 21) {
+      else if(time >= 19 && time < 21) {
         return domain + '/img/atardecer.jpg';
       }
       else {
